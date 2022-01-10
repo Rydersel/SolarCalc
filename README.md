@@ -92,7 +92,8 @@ print(get_altitude(latitude, longitude, date))
 `
 latitude = 42.206
 longitude = -71.382
-
+`
+`
 date = datetime.datetime(2007, 2, 18, 15, 13, 1, 130320, tzinfo=datetime.timezone.utc)
 print(get_azimuth(latitude, longitude, date))
 `
@@ -103,7 +104,8 @@ latitude_deg = 42.206
 longitude_deg = -71.382
 date = datetime.datetime(2007, 2, 18, 15, 13, 1, 130320, tzinfo=datetime.timezone.utc)
 altitude_deg = get_altitude(latitude_deg, longitude_deg, date)
-print (radiation.get_radiation_direct(date, altitude_deg))`
+print (radiation.get_radiation_direct(date, altitude_deg))
+`
 
 
 
