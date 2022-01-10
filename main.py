@@ -97,8 +97,8 @@ KWH_Produced = (Energy_Production_Score(UserState) * User_KW_Use * 0.78) #18% en
    (PPWVAL * 1000) = (Energy_Production_Score * User_KW_Use * 0.78)
    Total_Price = PPWVAL * User_KW_Use 
    
-"""
 
+ 
 #Calculate Azimuth
 
 Azimuth = get_azimuth(latitude, longitude, date)
@@ -115,4 +115,27 @@ TotalRad = radiation.get_radiation_direct(date, altitude_deg) #in Watts Per Squa
 TotalRad = (TotalRad / 1000) #Convert to KW's
 Required_Array_Size = (TotalRad * Annual_KW_Ussage)
 Required_Array_Size = math.ceil(Required_Array_Size) # Round Up
-print(Required_Array_Size)
+
+"""
+month = 1
+for i in range(12):
+    if month <= 12:
+        Azimuth = get_azimuth(latitude, longitude, date)
+        altitude_deg = get_altitude(latitude, longitude, date)
+        date = datetime.datetime(2021, month, 18, 15, 13, 1, 130320, tzinfo=datetime.timezone.utc)
+
+        TotalRad = radiation.get_radiation_direct(date, altitude_deg)  # in Watts Per Square Meter
+        TotalRad = (TotalRad / 1000)  # Convert to KW's
+
+
+        Required_Array_Size = (TotalRad * Annual_KW_Ussage)
+        Required_Array_Size = math.ceil(Required_Array_Size)  # Round Up
+        print("Month:" + str(month))
+        print("Required Array Size: " + str(Required_Array_Size))
+        print("Watts Per Square Meter:" + str(TotalRad))
+        month = (month + 1)
+
+    else:
+        print("done")
+
+
