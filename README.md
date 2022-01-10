@@ -113,8 +113,6 @@ print (radiation.get_radiation_direct(date, altitude_deg))`
 
 **What we can do with this info:**
 
--using this information we can now calculate exact solar array size required for a given person's energy needs at a given time of the year and location.
-
--We can also now estimate the ammount of energy produced by said array at different points throughout the year. 
+-using this information we can now calculate exact solar array size required for a given person's energy needs at a given time of the year and location. We can also now estimate the ammount of energy produced by said array at different points throughout the year. Combining these characteristics we can now calculate the total solar array size required for a given person to satisfy their energy need for a given section of time. For example we can not only calculate how large of a solar array a specific consumer needs for their individual energy needs, we can also verify that said rig will be sufficient for every day of the year for the next 50 years. 
 
 An Implementation of this can be seen in this project.
