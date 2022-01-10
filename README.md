@@ -1,13 +1,4 @@
-<div align=center>
 
-  <a href="https://www.google.com/e">
-    <img src="https://discord.com/api/guilds/775861125765529640/widget.png?style=shield" alt="shield.png">
-  </a>
-
-  <a href="https://github.com/discordjs">
-    <img src="https://img.shields.io/badge//github/followers/:user?label=Follow" alt="shield.png">
-  </a>
-</div>
 
 
 **The Problem:**
