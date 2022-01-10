@@ -35,16 +35,16 @@ Variables Used:
 
 SConst — The solar flux outside the atmosphere at the mean earth-sun distance, known as solar constant. The solar constant used in the analysis is 1367 W/m2. This is consistent with the World Radiation Center (WRC) solar constant.
 
-β — The transmissivity of the atmosphere (averaged over all wavelengths) for the shortest path (in the direction of the zenith).
+`β` — The transmissivity of the atmosphere (averaged over all wavelengths) for the shortest path (in the direction of the zenith).
 
-m(θ) — The relative optical path length, measured as a proportion relative to the zenith path length (see equation 3 below).
+`m(θ)` — The relative optical path length, measured as a proportion relative to the zenith path length (see equation 3 below).
 
-SunDurθ,α — The time duration represented by the sky sector. For most sectors, it is equal to the day interval (for example, a month) 
+`SunDurθ,α` — The time duration represented by the sky sector. For most sectors, it is equal to the day interval (for example, a month) 
 multiplied by the hour interval (for example, a half hour). For partial sectors (near the horizon), the duration is calculated using spherical geometry.
 
-SunGapθ,α — The gap fraction for the sun map sector.
+`SunGapθ,α` — The gap fraction for the sun map sector.
 
-AngInθ,α — The angle of incidence between the centroid of the sky sector and the axis normal to the surface (see equation 4 below).
+`AngInθ,α` — The angle of incidence between the centroid of the sky sector and the axis normal to the surface (see equation 4 below).
 
 
 **Calculating Difused Radiation:*
@@ -56,17 +56,17 @@ For each sky sector, the diffuse radiation at its centroid (Dif) is calculated, 
 
 Variables:
 
-Rglb — The global normal radiation (` Rglb = (SConst Σ(βm(θ))) / (1 - Pdif)`).
+`Rglb` — The global normal radiation (` Rglb = (SConst Σ(βm(θ))) / (1 - Pdif)`).
 
-Pdif — The proportion of global normal radiation flux that is diffused. Typically it is approximately 0.2 for very clear sky conditions and 0.7 for very cloudy sky conditions.
+`Pdif` — The proportion of global normal radiation flux that is diffused. Typically it is approximately 0.2 for very clear sky conditions and 0.7 for very cloudy sky conditions.
 
-Dur — The time interval for analysis.
+`Dur` — The time interval for analysis.
 
-SkyGapθ,α — The gap fraction (proportion of visible sky) for the sky sector.
+`SkyGapθ,α` — The gap fraction (proportion of visible sky) for the sky sector.
 
-Weightθ,α — The proportion of diffuse radiation originating in a given sky sector relative to all sectors (see equations 7 and 8 below).
+`Weightθ,α` — The proportion of diffuse radiation originating in a given sky sector relative to all sectors (see equations 7 and 8 below).
 
-AngInθ,α — The angle of incidence between the centroid of the sky sector and the intercepting surface.
+`AngInθ,α` — The angle of incidence between the centroid of the sky sector and the intercepting surface.
 
 
 It is then as simple as adding both equations together to create a final formula for global radiation we can then implement in our code.
