@@ -1,3 +1,10 @@
+<h1 align="center">
+  <br>
+  <a href="https://github.com/Rydersel"><img src="https://cdn.discordapp.com/attachments/722227948157141023/929897255283073034/Solar-Plant-PNG.png"></a>
+  <br>
+  SolarCalc
+  <br>
+</h1>
 
 
 
