@@ -3,25 +3,14 @@ import time
 
 from pysolar.solar import *
 import datetime
+import math
 State = 0
 UserState = 0
 User_KW_Use = 11
-
-
 latitude = 42.206
+Annual_KW_Ussage = 10
 longitude = -71.382
-#Calculate Azimuth
 date = datetime.datetime(2007, 2, 18, 15, 13, 1, 130320, tzinfo=datetime.timezone.utc)
-print(get_azimuth(latitude, longitude, date))
-
-
-
-#Calculate Sun's irradiation (not taking into account cloud cover)
-latitude_deg = 42.206
-longitude_deg = -71.382
-date = datetime.datetime(2007, 2, 18, 15, 13, 1, 130320, tzinfo=datetime.timezone.utc)
-altitude_deg = get_altitude(latitude_deg, longitude_deg, date)
-print (radiation.get_radiation_direct(date, altitude_deg))
 
 
 """
@@ -40,6 +29,24 @@ print (radiation.get_radiation_direct(date, altitude_deg))
 """
 
 
+
+#Calculate Azimuth
+
+Azimuth = get_azimuth(latitude, longitude, date)
+
+#Calculate Sun's Altitude:
+
+
+altitude_deg = get_altitude(latitude, longitude, date)
+
+#Calculate Sun's Irridation (not taking into account cloud cover)
+
+altitude_deg = get_altitude(latitude, longitude, date)
+TotalRad = radiation.get_radiation_direct(date, altitude_deg) #in Watts Per Square Meter
+TotalRad = (TotalRad / 1000) #Convert to KW's
+Required_Array_Size = (TotalRad * Annual_KW_Ussage)
+Required_Array_Size = math.ceil(Required_Array_Size) # Round Up
+print(Required_Array_Size)
 
 
 
@@ -91,3 +98,21 @@ KWH_Produced = (Energy_Production_Score(UserState) * User_KW_Use * 0.78) #18% en
    Total_Price = PPWVAL * User_KW_Use 
    
 """
+
+#Calculate Azimuth
+
+Azimuth = get_azimuth(latitude, longitude, date)
+
+#Calculate Sun's Altitude:
+
+
+altitude_deg = get_altitude(latitude, longitude, date)
+
+#Calculate Sun's Irridation (not taking into account cloud cover)
+
+altitude_deg = get_altitude(latitude, longitude, date)
+TotalRad = radiation.get_radiation_direct(date, altitude_deg) #in Watts Per Square Meter
+TotalRad = (TotalRad / 1000) #Convert to KW's
+Required_Array_Size = (TotalRad * Annual_KW_Ussage)
+Required_Array_Size = math.ceil(Required_Array_Size) # Round Up
+print(Required_Array_Size)
