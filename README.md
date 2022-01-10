@@ -82,11 +82,9 @@ Luckily our code can be drastically simplified with the help of the [PySolar](ht
 `
 latitude = YOUR_LATITUDE_GOES_HERE
 longitude = YOUR_LONGITUDE_GOES_HERE
-
 date = datetime.datetime.now(datetime.timezone.utc)
 print(get_altitude(latitude, longitude, date))
 `
-
 
 **Calculate Sun's Azimuth:**
 `
