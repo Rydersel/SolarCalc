@@ -117,25 +117,27 @@ Required_Array_Size = (TotalRad * Annual_KW_Ussage)
 Required_Array_Size = math.ceil(Required_Array_Size) # Round Up
 
 """
-month = 1
-for i in range(12):
-    if month <= 12:
-        Azimuth = get_azimuth(latitude, longitude, date)
-        altitude_deg = get_altitude(latitude, longitude, date)
-        date = datetime.datetime(2021, month, 18, 15, 13, 1, 130320, tzinfo=datetime.timezone.utc)
 
-        TotalRad = radiation.get_radiation_direct(date, altitude_deg)  # in Watts Per Square Meter
-        TotalRad = (TotalRad / 1000)  # Convert to KW's
+def SolarCalc(year, period_in_months):
+    month = 1
+    for i in range(period_in_months):
+        if month <= 12:
+            date = datetime.datetime(year, month, 18, 15, 13, 1, 130320, tzinfo=datetime.timezone.utc)
+            Azimuth = get_azimuth(latitude, longitude, date)
+            altitude_deg = get_altitude(latitude, longitude, date)
 
 
-        Required_Array_Size = (TotalRad * Annual_KW_Ussage)
-        Required_Array_Size = math.ceil(Required_Array_Size)  # Round Up
-        print("Month:" + str(month))
-        print("Required Array Size: " + str(Required_Array_Size))
-        print("Watts Per Square Meter:" + str(TotalRad))
-        month = (month + 1)
+            TotalRad = radiation.get_radiation_direct(date, altitude_deg)  # in Watts Per Square Meter
+            TotalRad = (TotalRad / 1000)  # Convert to KW's
 
-    else:
-        print("done")
+
+            Required_Array_Size = (TotalRad * Annual_KW_Ussage)
+            Required_Array_Size = math.ceil(Required_Array_Size)  # Round Up
+            print("Month:" + str(month))
+            print("Required Array Size: " + str(Required_Array_Size))
+            print("Watts Per Square Meter:" + str(TotalRad))
+            month = (month + 1)
+
+SolarCalc(2021,12)
 
 
