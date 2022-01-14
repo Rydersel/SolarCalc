@@ -12,7 +12,7 @@
 
 Current solar power residential price calculators are crude and rely a-lot on rough estimation. They also fail to take into account deviation in the Sun's energy output due to variables such as cloud cover, location and local weather patterns. I plan to code a more comprehensive solar price calculator that takes these factors into account in order to better educate possible solar power consumers on the pros and cons of a given system. 
 
-Creating an Initial Prototype:**
+**Creating an Initial Prototype:**
 
 Before we can create a better calculation system, we must first create a mockup of an existing system. Since no open source examples seem to be available I started by quickly writing one up in C++.I later converted this to python to better handle large data set management further down the line.
 
